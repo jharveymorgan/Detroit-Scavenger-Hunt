@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA47742F1BBB1871009F719F /* DetroitScavengerHuntItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47742E1BBB1871009F719F /* DetroitScavengerHuntItem.swift */; settings = {ASSET_TAGS = (); }; };
+		BA727ADF1BC485E200EB7CC7 /* ItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA727ADE1BC485E200EB7CC7 /* ItemsManager.swift */; settings = {ASSET_TAGS = (); }; };
 		BA7A05871BB64723006BA1F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05861BB64723006BA1F4 /* AppDelegate.swift */; };
-		BA7A05891BB64723006BA1F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05881BB64723006BA1F4 /* ViewController.swift */; };
+		BA7A05891BB64723006BA1F4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05881BB64723006BA1F4 /* AddViewController.swift */; };
 		BA7A058C1BB64723006BA1F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A058A1BB64723006BA1F4 /* Main.storyboard */; };
 		BA7A058E1BB64723006BA1F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7A058D1BB64723006BA1F4 /* Assets.xcassets */; };
 		BA7A05911BB64723006BA1F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A058F1BB64723006BA1F4 /* LaunchScreen.storyboard */; };
 		BA7A059C1BB64724006BA1F4 /* Detroit_Scavenger_HuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A059B1BB64724006BA1F4 /* Detroit_Scavenger_HuntTests.swift */; };
 		BA7A05A71BB64724006BA1F4 /* Detroit_Scavenger_HuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05A61BB64724006BA1F4 /* Detroit_Scavenger_HuntUITests.swift */; };
+		BA7A05B51BB64A86006BA1F4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05B41BB64A86006BA1F4 /* ListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA47742E1BBB1871009F719F /* DetroitScavengerHuntItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetroitScavengerHuntItem.swift; sourceTree = "<group>"; };
+		BA727ADE1BC485E200EB7CC7 /* ItemsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsManager.swift; path = ../ItemsManager.swift; sourceTree = "<group>"; };
 		BA7A05831BB64723006BA1F4 /* Detroit Scavenger Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Detroit Scavenger Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7A05861BB64723006BA1F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA7A05881BB64723006BA1F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA7A05881BB64723006BA1F4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		BA7A058B1BB64723006BA1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA7A058D1BB64723006BA1F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA7A05901BB64723006BA1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		BA7A05A21BB64724006BA1F4 /* Detroit Scavenger HuntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Detroit Scavenger HuntUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7A05A61BB64724006BA1F4 /* Detroit_Scavenger_HuntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detroit_Scavenger_HuntUITests.swift; sourceTree = "<group>"; };
 		BA7A05A81BB64724006BA1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA7A05B41BB64A86006BA1F4 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				BA7A05861BB64723006BA1F4 /* AppDelegate.swift */,
-				BA7A05881BB64723006BA1F4 /* ViewController.swift */,
+				BA7A05881BB64723006BA1F4 /* AddViewController.swift */,
 				BA7A058A1BB64723006BA1F4 /* Main.storyboard */,
+				BA47742E1BBB1871009F719F /* DetroitScavengerHuntItem.swift */,
+				BA7A05B41BB64A86006BA1F4 /* ListViewController.swift */,
+				BA727ADE1BC485E200EB7CC7 /* ItemsManager.swift */,
 				BA7A058D1BB64723006BA1F4 /* Assets.xcassets */,
 				BA7A058F1BB64723006BA1F4 /* LaunchScreen.storyboard */,
 				BA7A05921BB64724006BA1F4 /* Info.plist */,
@@ -258,8 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA7A05891BB64723006BA1F4 /* ViewController.swift in Sources */,
+				BA47742F1BBB1871009F719F /* DetroitScavengerHuntItem.swift in Sources */,
+				BA7A05891BB64723006BA1F4 /* AddViewController.swift in Sources */,
 				BA7A05871BB64723006BA1F4 /* AppDelegate.swift in Sources */,
+				BA7A05B51BB64A86006BA1F4 /* ListViewController.swift in Sources */,
+				BA727ADF1BC485E200EB7CC7 /* ItemsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +498,7 @@
 				BA7A05AD1BB64724006BA1F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA7A05AE1BB64724006BA1F4 /* Build configuration list for PBXNativeTarget "Detroit Scavenger HuntTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +507,7 @@
 				BA7A05B01BB64724006BA1F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA7A05B11BB64724006BA1F4 /* Build configuration list for PBXNativeTarget "Detroit Scavenger HuntUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +516,7 @@
 				BA7A05B31BB64724006BA1F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -30,17 +30,17 @@ class DetroitScavengerHuntItem: NSObject, NSCoding {
     let photoKey = "photoKey"
     
     // Implement encodeWithCoder; Only add the photo to the archive if there is one 
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: nameKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: nameKey)
         if let thePhoto = photo {
-            aCoder.encodeObject(thePhoto, forKey: photoKey)
+            aCoder.encode(thePhoto, forKey: photoKey)
         }
     }
     
     // Implement NSCoder's initializer
     required init(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObjectForKey(nameKey) as! String
-        photo = aDecoder.decodeObjectForKey(photoKey) as? UIImage
+        name = aDecoder.decodeObject(forKey: nameKey) as! String
+        photo = aDecoder.decodeObject(forKey: photoKey) as? UIImage
     }
     
     init(name: String) {

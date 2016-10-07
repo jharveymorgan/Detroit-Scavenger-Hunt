@@ -18,7 +18,7 @@ class ListViewController : UITableViewController, UIImagePickerControllerDelegat
     let myManager = ItemsManager()
     
     /* Override usual tableView:numberOfRowsInSection: (usual TableViewController protocols?) to get get the number of items in itemsManager */
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // get number of elements in itemsManager
         return myManager.items.count // Number items in list
@@ -26,23 +26,23 @@ class ListViewController : UITableViewController, UIImagePickerControllerDelegat
     
     // Override tableView:cellForRowAtIndexPath to create and get a cell for the given index path
     // Set the cell's text label's text to the to the item at the index corresponding to the index path, then return the cell
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Dequeue (Remove a piece of data waiting to be processed) with ListViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCell", for: indexPath) as UITableViewCell
         
         
         // Text label for cell
-        let item = myManager.items[indexPath.row]
+        let item = myManager.items[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = item.name
         
         // Check whether item is completed
         // display an item with a photo, show its photo and display a checkmark in the row
         if (item.completed) {
-            cell.accessoryType = .Checkmark
+            cell.accessoryType = .checkmark
             cell.imageView?.image = item.photo
         } else {
-            cell.accessoryType = .None
+            cell.accessoryType = .none
             cell.imageView?.image = nil
         }
         
@@ -52,21 +52,21 @@ class ListViewController : UITableViewController, UIImagePickerControllerDelegat
     
     
     // Add new items to Detroit Scavenger Hunt List
-    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+    @IBAction func unwindToList(_ segue: UIStoryboardSegue) {
         
         // Check segue's identifier is "Done Item"
         if segue.identifier == "DoneItem" {
             
             // Get the source view controller
-            let addItemController = segue.sourceViewController as! AddViewController
+            let addItemController = segue.source as! AddViewController
 
             // If AddViewController has new item, add it to the list
             if let newItem = addItemController.newItem {
                 myManager.items += [newItem]
                 
                // tell tableView there is a new row where the item was inserted in the list
-                let indexPath = NSIndexPath(forRow: myManager.items.count - 1, inSection: 0)
-                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                let indexPath = IndexPath(row: myManager.items.count - 1, section: 0)
+                    tableView.insertRows(at: [indexPath], with: .automatic)
             }
         }
         
@@ -76,34 +76,34 @@ class ListViewController : UITableViewController, UIImagePickerControllerDelegat
     
     
     /*Respond to the tapping of an item by to create and display Image Picker*/
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         /* Create, configure, and present Image Picker. Picker doesn't dismiss itself. Client dismisses it and delegate calls back, so self is set to be Image Picker's delegate. */
         let imagePicker = UIImagePickerController()
         
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            imagePicker.sourceType = .Camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
         } else {
-            imagePicker.sourceType = .PhotoLibrary
+            imagePicker.sourceType = .photoLibrary
         }
         
         // Get image?
         imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
         
     }
     
     /* imagePictkerController should:Get photo from the info dictionary; Get the currently selected item; Set the item's photo library; Dismiss the image picker; Reload affected row */
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let indexPath = tableView.indexPathForSelectedRow{
-            let selectedItem = myManager.items[indexPath.row]
+            let selectedItem = myManager.items[(indexPath as NSIndexPath).row]
             let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
             selectedItem.photo = photo
         
         // dismiss image picker, reload affected row
-        dismissViewControllerAnimated(true, completion: { () -> Void in
-            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        dismiss(animated: true, completion: { () -> Void in
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
             })
         }
         
@@ -113,31 +113,31 @@ class ListViewController : UITableViewController, UIImagePickerControllerDelegat
     
     // Reduce size of photo to make app more efficient
     // private function takes a UIImage as its argument and returns a new appropriately-sized UIImage
-    private func thumbnailFromImage(OriginalImage: UIImage) -> UIImage {
+    fileprivate func thumbnailFromImage(_ OriginalImage: UIImage) -> UIImage {
         
         let destinationSize = CGSize(width: 90, height: OriginalImage.size.height * (90 / OriginalImage.size.width))
         
-        let destinationRect = CGRect(origin: CGPointZero, size: destinationSize)
+        let destinationRect = CGRect(origin: CGPoint.zero, size: destinationSize)
         
         
         UIGraphicsBeginImageContext(destinationSize)
-        OriginalImage.drawInRect(destinationRect)
+        OriginalImage.draw(in: destinationRect)
         
         let thumbnail = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         
-        return thumbnail
+        return thumbnail!
     }
     
     // Enable swipe to delete item cell
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         // Swipe to show delete button
         // Delete from TableView when button is pressed
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            myManager.items.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            myManager.items.remove(at: (indexPath as NSIndexPath).row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
         
         // save after deletion

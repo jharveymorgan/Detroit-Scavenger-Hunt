@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA47742F1BBB1871009F719F /* DetroitScavengerHuntItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47742E1BBB1871009F719F /* DetroitScavengerHuntItem.swift */; settings = {ASSET_TAGS = (); }; };
-		BA727ADF1BC485E200EB7CC7 /* ItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA727ADE1BC485E200EB7CC7 /* ItemsManager.swift */; settings = {ASSET_TAGS = (); }; };
+		BA47742F1BBB1871009F719F /* DetroitScavengerHuntItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47742E1BBB1871009F719F /* DetroitScavengerHuntItem.swift */; };
+		BA727ADF1BC485E200EB7CC7 /* ItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA727ADE1BC485E200EB7CC7 /* ItemsManager.swift */; };
 		BA7A05871BB64723006BA1F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05861BB64723006BA1F4 /* AppDelegate.swift */; };
 		BA7A05891BB64723006BA1F4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05881BB64723006BA1F4 /* AddViewController.swift */; };
 		BA7A058C1BB64723006BA1F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A058A1BB64723006BA1F4 /* Main.storyboard */; };
@@ -16,7 +16,7 @@
 		BA7A05911BB64723006BA1F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A058F1BB64723006BA1F4 /* LaunchScreen.storyboard */; };
 		BA7A059C1BB64724006BA1F4 /* Detroit_Scavenger_HuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A059B1BB64724006BA1F4 /* Detroit_Scavenger_HuntTests.swift */; };
 		BA7A05A71BB64724006BA1F4 /* Detroit_Scavenger_HuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05A61BB64724006BA1F4 /* Detroit_Scavenger_HuntUITests.swift */; };
-		BA7A05B51BB64A86006BA1F4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05B41BB64A86006BA1F4 /* ListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BA7A05B51BB64A86006BA1F4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A05B41BB64A86006BA1F4 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,15 +202,18 @@
 					BA7A05821BB64723006BA1F4 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = C9L43P9G27;
+						LastSwiftMigration = 0800;
 					};
 					BA7A05961BB64724006BA1F4 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = C9L43P9G27;
+						LastSwiftMigration = 0800;
 						TestTargetID = BA7A05821BB64723006BA1F4;
 					};
 					BA7A05A11BB64724006BA1F4 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = C9L43P9G27;
+						LastSwiftMigration = 0800;
 						TestTargetID = BA7A05821BB64723006BA1F4;
 					};
 				};
@@ -417,6 +420,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Detroit-Scavenger-Hunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -428,6 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Detroit-Scavenger-Hunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -439,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Detroit-Scavenger-HuntTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Detroit Scavenger Hunt.app/Detroit Scavenger Hunt";
 			};
 			name = Debug;
@@ -451,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Detroit-Scavenger-HuntTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Detroit Scavenger Hunt.app/Detroit Scavenger Hunt";
 			};
 			name = Release;
@@ -462,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Detroit-Scavenger-HuntUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Detroit Scavenger Hunt";
 				USES_XCTRUNNER = YES;
 			};
@@ -474,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Detroit-Scavenger-HuntUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Detroit Scavenger Hunt";
 				USES_XCTRUNNER = YES;
 			};

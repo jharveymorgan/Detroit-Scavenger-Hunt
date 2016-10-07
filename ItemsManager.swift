@@ -21,7 +21,7 @@ class ItemsManager {
     func archivePath() -> String? {
         
         // Get all the directories available to our user
-        let directoryList = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,true)
+        let directoryList = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask,true)
         
         // Get the first directory
         if let documentsPath = directoryList.first {
@@ -56,10 +56,10 @@ class ItemsManager {
         if let theArchivePath = archivePath() {
             
             // Next we'll check to see if the file exists at the path using the default file manager.
-            if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
+            if FileManager.default.fileExists(atPath: theArchivePath) {
                 
                 // Retrieve the bits stored in the file and set them equal to an array of DetroitScavengerHuntItems.
-                items = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [DetroitScavengerHuntItem]
+                items = NSKeyedUnarchiver.unarchiveObject(withFile: theArchivePath) as! [DetroitScavengerHuntItem]
             }
         }
         

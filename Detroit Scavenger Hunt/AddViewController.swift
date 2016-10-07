@@ -29,8 +29,8 @@ class AddViewController: UIViewController, UITextFieldDelegate, UINavigationCont
     }
 
     // Cancel button
-    @IBAction func cancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancel(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     // text field
@@ -40,7 +40,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UINavigationCont
     var newItem: DetroitScavengerHuntItem?
     
     // checks for value
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // check segue's identifier is "DoneItem"
         if segue.identifier == "DoneItem" {
